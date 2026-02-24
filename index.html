@@ -222,7 +222,7 @@ body {
 }
 
 .insight::before {
-  content: '→ What this translates to';
+  content: '→ What this means';
   display: block;
   font-size: 11px;
   font-weight: 700;
@@ -881,34 +881,64 @@ body {
   </div>
   <p class="section-subtitle">This isn't just a bio line about South African roots. This is someone who has physically moved through the world.</p>
 
-  <div class="card animate">
-    <div style="display:flex;gap:32px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;">
-      <div style="text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">116</div>
-        <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:4px;">Flights Taken</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">167,975</div>
-        <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:4px;">Miles Traveled</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">6.7×</div>
-        <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:4px;">Around the World</div>
-      </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;">
+    <div class="card animate" style="text-align:center;padding:32px 16px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">116</div>
+      <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:8px;">Flights Taken</div>
     </div>
+    <div class="card animate" style="text-align:center;padding:32px 16px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">167,975</div>
+      <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:8px;">Miles Traveled</div>
+    </div>
+    <div class="card animate" style="text-align:center;padding:32px 16px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--accent);">6.7×</div>
+      <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-top:8px;">Around the World</div>
+    </div>
+  </div>
 
-    <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:12px;">Countries Lived In / Connected To</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <span class="tag accent">🇺🇸 US — Born & Raised</span>
-      <span class="tag accent">🇿🇦 South Africa — Family Roots</span>
-      <span class="tag accent">🇮🇱 Israel — Deep Ties</span>
-      <span class="tag accent">🇧🇷 Brazil — Organic Audience</span>
-      <span class="tag accent">🇬🇧 UK — Radio Airplay</span>
-      <span class="tag accent">🇪🇸 Spain — Radio Airplay</span>
-      <span class="tag accent">🇮🇹 Italy — Radio Airplay</span>
-      <span class="tag accent">🇵🇹 Portugal — Streaming</span>
-      <span class="tag accent">🇲🇽 Mexico — #1 Shazam Market</span>
-      <span class="tag accent">🇵🇪 Peru — 505 Shazams</span>
+  <div class="card animate" style="padding:24px;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:16px;">Countries Lived In / Connected To</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;">
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇺🇸</div>
+        <div style="font-size:13px;color:var(--text-dim);">US — Born & Raised</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇿🇦</div>
+        <div style="font-size:13px;color:var(--text-dim);">South Africa — Family Roots</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇮🇱</div>
+        <div style="font-size:13px;color:var(--text-dim);">Israel — Deep Ties</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇧🇷</div>
+        <div style="font-size:13px;color:var(--text-dim);">Brazil — Organic Audience</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇬🇧</div>
+        <div style="font-size:13px;color:var(--text-dim);">UK — Radio Airplay</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇪🇸</div>
+        <div style="font-size:13px;color:var(--text-dim);">Spain — Radio Airplay</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇮🇹</div>
+        <div style="font-size:13px;color:var(--text-dim);">Italy — Radio Airplay</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇵🇹</div>
+        <div style="font-size:13px;color:var(--text-dim);">Portugal — Streaming</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇲🇽</div>
+        <div style="font-size:13px;color:var(--text-dim);">Mexico — #1 Shazam Market</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:8px;">🇵🇪</div>
+        <div style="font-size:13px;color:var(--text-dim);">Peru — 505 Shazams</div>
+      </div>
     </div>
   </div>
 
