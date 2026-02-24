@@ -569,9 +569,64 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .grid-2, .grid-3, .grid-4, .split, .verdict-grid { grid-template-columns: 1fr; }
-  .hero-meta { gap: 20px; }
   .container { padding: 0 16px; }
+
+  /* All multi-column grids → single column */
+  .grid-2, .grid-3, .grid-4, .split, .verdict-grid { grid-template-columns: 1fr !important; }
+
+  /* Override ALL inline grids to single column on mobile */
+  [style*="grid-template-columns:1fr 1fr 1fr"],
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns:repeat(5"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns:1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero stats */
+  .hero-meta {
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-stat-value { font-size: 22px; }
+  .hero-stat-label { font-size: 11px; }
+  .hero-sub { font-size: 16px; }
+
+  /* Nav */
+  .nav { padding: 0 12px; }
+  .nav-inner { height: 48px; }
+  .nav-brand { font-size: 16px; }
+  .nav-link { padding: 5px 10px; font-size: 11px; }
+
+  /* Sections */
+  .section { padding: 32px 0; }
+  .section-title { font-size: 22px; }
+  .section-subtitle { font-size: 14px; }
+
+  /* Cards */
+  .card { padding: 16px; }
+  .card-value { font-size: 28px; }
+
+  /* Trend rows — fixed column grid */
+  [style*="grid-template-columns:80px 1fr 60px"] {
+    grid-template-columns: 60px 1fr 50px !important;
+    font-size: 12px;
+  }
+
+  /* Tables scroll horizontally */
+  .data-table { font-size: 12px; }
+
+  /* Live cards — 2 columns instead of 5 */
+  [style*="grid-template-columns:repeat(5"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Global footprint big numbers */
+  [style*="grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ANIMATIONS */
@@ -904,7 +959,7 @@ body {
           <div style="flex:1;height:28px;background:var(--surface-3);border-radius:6px;overflow:hidden;">
             <div style="width:5%;height:100%;background:var(--purple);border-radius:6px;min-width:4px;"></div>
           </div>
-          <div class="mono" style="font-size:13px;color:var(--text-dim);min-width:70px;text-align:right;">1,155</div>
+          <div class="mono" style="font-size:13px;color:var(--text-dim);min-width:70px;text-align:right;">4,845</div>
         </div>
       </div>
       <div class="card-detail" style="margin-top:12px;">315K+ unique listeners across the catalog in 12 months — not one-track traffic</div>
@@ -1674,9 +1729,9 @@ body {
         <tr>
           <td class="track-name">forever</td>
           <td class="mono">Feb 2026</td>
-          <td class="mono">3,402</td>
-          <td class="mono">1,155</td>
-          <td class="mono">518</td>
+          <td class="mono">4,845</td>
+          <td class="mono">1,664</td>
+          <td class="mono">695</td>
           <td><span class="tag purple">Launch</span></td>
         </tr>
       </tbody>
@@ -1802,7 +1857,7 @@ body {
     <div class="timeline-item">
       <div class="timeline-date">Feb 17, 2026</div>
       <div class="timeline-title">forever</div>
-      <div class="timeline-detail">Latest single — active campaign, 3,402 streams, 44.8% save rate</div>
+      <div class="timeline-detail">Latest single — active campaign, 4,845 streams, 41.8% save rate</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-date">Dec 5, 2025</div>
@@ -2394,18 +2449,18 @@ body {
     </div>
     <div class="card">
       <div class="card-label">Streams Generated</div>
-      <div class="card-value green">3,402</div>
-      <div class="card-detail">1,155 listeners · 2.28 str/listener</div>
+      <div class="card-value green">4,845</div>
+      <div class="card-detail">1,664 listeners · 2.27 str/listener</div>
     </div>
     <div class="card">
       <div class="card-label">Save Rate</div>
-      <div class="card-value accent">44.8%</div>
-      <div class="card-detail">518 saves / 1,155 listeners — 3-6× industry avg</div>
+      <div class="card-value accent">41.8%</div>
+      <div class="card-detail">695 saves / 1,664 listeners — 3-6× industry avg</div>
     </div>
     <div class="card">
       <div class="card-label">Playlist Add Rate</div>
-      <div class="card-value blue">35.8%</div>
-      <div class="card-detail">414 adds across 86 playlists — exceptional conversion</div>
+      <div class="card-value blue">32.5%</div>
+      <div class="card-detail">540 adds across 118 playlists — exceptional conversion</div>
     </div>
   </div>
 
@@ -2446,19 +2501,19 @@ body {
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">Profile</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:55%;background:var(--accent);">55%</div>
+            <div class="demo-bar-fill" style="width:53%;background:var(--accent);">53%</div>
           </div>
         </div>
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">Own Lists</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:30%;background:var(--blue);">30%</div>
+            <div class="demo-bar-fill" style="width:29%;background:var(--blue);">29%</div>
           </div>
         </div>
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">Algorithmic</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:14%;background:var(--green);">14%</div>
+            <div class="demo-bar-fill" style="width:16%;background:var(--green);">16%</div>
           </div>
         </div>
         <div class="demo-row">
@@ -2468,7 +2523,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="card-detail" style="margin-top:12px;">14% algorithmic within days of release — Radio (299 streams), Release Radar (53), Smart Shuffle active. Algorithm is pushing hard.</div>
+      <div class="card-detail" style="margin-top:12px;">16% algorithmic — Radio (505 streams), Release Radar (75), Smart Shuffle active. Algorithm is pushing hard.</div>
     </div>
     <div class="card">
       <div class="card-label">Forever — Geographic Split (28 days)</div>
@@ -2476,19 +2531,19 @@ body {
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">🇧🇷 Brazil</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:65%;background:var(--green);">65%</div>
+            <div class="demo-bar-fill" style="width:68%;background:var(--green);">68%</div>
           </div>
         </div>
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">🇲🇽 Mexico</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:15%;background:var(--accent);">15%</div>
+            <div class="demo-bar-fill" style="width:11%;background:var(--accent);">11%</div>
           </div>
         </div>
         <div class="demo-row">
           <div class="demo-label" style="width:100px;">🇺🇸 US</div>
           <div class="demo-bar">
-            <div class="demo-bar-fill" style="width:7%;background:var(--blue);">7%</div>
+            <div class="demo-bar-fill" style="width:6%;background:var(--blue);">6%</div>
           </div>
         </div>
         <div class="demo-row">
@@ -2498,12 +2553,12 @@ body {
           </div>
         </div>
       </div>
-      <div class="card-detail" style="margin-top:12px;">Brazil dominant (1,707 streams). Mexico (388) and US (178) growing organically — algorithm finding adjacent audiences without paid targeting.</div>
+      <div class="card-detail" style="margin-top:12px;">Brazil dominant (2,566 streams). Mexico (401) and US (208) growing organically — algorithm finding adjacent audiences without paid targeting.</div>
     </div>
   </div>
 
   <div class="insight">
-    44.8% save rate. 35.8% playlist add rate. Cost metrics running 1.5–25× below industry benchmarks. Spotify's algorithm picked up the track within days — Radio alone drove 299 streams organically. Built alone with $754 and no team, already outperforming most campaigns with ten times the budget. The product works.
+    41.8% save rate. 32.5% playlist add rate. Cost metrics running 1.5–25× below industry benchmarks. Spotify's algorithm picked up the track within days — Radio alone drove 505 streams organically. Built alone with $936 and no team, already outperforming most campaigns with ten times the budget. The product works.
   </div>
 </section>
 
@@ -2530,7 +2585,7 @@ body {
           <td class="mono">01</td>
           <td><strong>Listener Retention & Completion</strong><br><span style="color:var(--text-dim);font-size:12px;">People finish the song.</span></td>
           <td><span class="tag green">✓ Answered</span></td>
-          <td style="font-size:12px;">2.28 str/listener (Forever), 1.6 avg (catalog), 44.8% save rate (Forever), 5K+ Shazams = deep engagement proxy. 14% algorithmic within days of release.</td>
+          <td style="font-size:12px;">2.27 str/listener (Forever), 1.6 avg (catalog), 41.8% save rate (Forever), 5K+ Shazams = deep engagement proxy. 16% algorithmic within days of release.</td>
         </tr>
         <tr>
           <td class="mono">02</td>
@@ -2761,7 +2816,7 @@ body {
               <span class="tag green" style="margin-left:8px;font-size:10px;">LIVE</span>
             </div>
           </div>
-          <p style="font-size:13px;color:var(--text-dim);margin-top:6px;line-height:1.6;">Out now. Brazilian sunset pop. 3,402 streams, 44.8% save rate, 14% algorithmic already.</p>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:6px;line-height:1.6;">Out now. Brazilian sunset pop. 4,845 streams, 41.8% save rate, 16% algorithmic already.</p>
         </div>
       </div>
 
